@@ -5,6 +5,7 @@ package com.mycompany.app;
  */
 public class App2 {
 
+    // DUMMY
     private static final String MESSAGE = "Hey World!";
 
     public App2() {}
