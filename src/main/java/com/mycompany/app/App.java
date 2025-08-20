@@ -6,7 +6,7 @@ package com.mycompany.app;
 public class App {
 
     //DUMMY
-    private static final String MESSAGE = "Hello World!11";
+    private static final String MESSAGE = "Hello World!113";
 
     public App() {}
 
