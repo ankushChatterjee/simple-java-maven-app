@@ -17,6 +17,8 @@
   </dependencies>
   <properties>
     <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
+    <!-- Define the reports directory property -->
+    <reports.directory>${project.basedir}/reports_${env.HARNESS_NODE_INDEX}</reports.directory>
   </properties>
   <build>
     <pluginManagement>
@@ -48,9 +50,17 @@
         </configuration>
       </plugin>
       <plugin>
-          <groupId>org.apache.maven.plugins</groupId>
-          <artifactId>maven-surefire-plugin</artifactId>
-          <version>3.2.5</version>
+        <groupId>org.apache.maven.plugins</groupId>
+        <artifactId>maven-surefire-plugin</artifactId>
+        <version>3.2.5</version>
+        <configuration>
+          <!-- Configure JUnit XML report output directory -->
+          <reportsDirectory>${reports.directory}</reportsDirectory>
+          <!-- Ensure XML reports are generated -->
+          <useFile>true</useFile>
+          <!-- Optional: also generate plain text reports in the same directory -->
+          <printSummary>true</printSummary>
+        </configuration>
       </plugin>
       <plugin>
         <groupId>org.apache.maven.plugins</groupId>
